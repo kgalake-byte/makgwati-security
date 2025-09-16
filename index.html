@@ -777,7 +777,7 @@
             <a href="#home" class="logo-container">
                 <div class="logo">
                     <div class="logo-img">
-                        <img src="media/makgwati-logo.jpg" alt="Makgwati Security Training Logo" onerror="this.style.display='none'; document.querySelector('.logo-img .fa-shield-alt').style.display='block';">
+                        <img src="./media/makgwati-logo.jpg" alt="Makgwati Security Training Logo" onerror="this.style.display='none'; document.querySelector('.logo-img .fa-shield-alt').style.display='block';">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="logo-text">
@@ -914,23 +914,23 @@
                 </div>
                 
                 <div class="video-playlist">
-                    <div class="video-thumb active" data-video="media/VID-20250914-WA0005.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Firearm+Safety">
+                    <div class="video-thumb active" data-video="./media/VID-20250914-WA0005.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Firearm+Safety">
                         <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Firearm+Safety" alt="Firearm Safety">
                         <div class="video-title">Firearm Safety</div>
                     </div>
-                    <div class="video-thumb" data-video="media/VID-20250914-WA0006.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Security+Procedures">
+                    <div class="video-thumb" data-video="./media/VID-20250914-WA0006.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Security+Procedures">
                         <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Security+Procedures" alt="Security Procedures">
                         <div class="video-title">Security Procedures</div>
                     </div>
-                    <div class="video-thumb" data-video="media/VID-20250914-WA0050.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
+                    <div class="video-thumb" data-video="./media/VID-20250914-WA0050.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
                         <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques" alt="Training Techniques">
                         <div class="video-title">Training Techniques</div>
                     </div>
-                    <div class="video-thumb" data-video="media/VID-20250914-WA0051.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
+                    <div class="video-thumb" data-video="./media/VID-20250914-WA0051.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
                         <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques" alt="Training Techniques">
                         <div class="video-title">Training Techniques</div>
                     </div>
-                    <div class="video-thumb" data-video="media/VID-20250914-WA0052.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
+                    <div class="video-thumb" data-video="./media/VID-20250914-WA0052.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
                         <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques" alt="Training Techniques">
                         <div class="video-title">Training Techniques</div>
                     </div>
@@ -955,6 +955,10 @@
                     <div class="contact-detail">
                         <i class="fas fa-phone"></i>
                         <span>Landline: 0150012295</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: makgwatitrading@gmail.com</span>
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-mobile-alt"></i>
@@ -1076,9 +1080,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Service card images with fallback
             const serviceImages = [
-                { id: 'security-img', url: 'media/IMG-20250914-WA0008.jpg', backup: true },
-                { id: 'firearm-img', url: 'media/IMG-20250914-WA0011.jpg', backup: true },
-                { id: 'specialized-img', url: 'media/IMG-20250914-WA0025.jpg', backup: true }
+                { id: 'security-img', url: './media/IMG-20250914-WA0008.jpg', backup: true },
+                { id: 'firearm-img', url: './media/IMG-20250914-WA0011.jpg', backup: true },
+                { id: 'specialized-img', url: './media/IMG-20250914-WA0025.jpg', backup: true }
             ];
             
             serviceImages.forEach(service => {
@@ -1123,25 +1127,25 @@
         function initGallery() {
             const galleryGrid = document.querySelector('.gallery-grid');
             const imageFiles = [
-                'media/2025-09-1608.38.07_df910a03.jpg',
-                'media/2025-09-1608.38.08_5a5a9be5.jpg'
-                'media/IMG-20250914-WA0025.jpg',
-                'media/IMG-20250914-WA0066.jpg',
-                'media/IMG-20250914-WA0042.jpg',
-                'media/IMG-20250914-WA0049.jpg',
-                'media/IMG-20250914-WA0056.jpg',
-                'media/IMG-20250914-WA0058.jpg',
-                'media/IMG-20250914-WA0008.jpg',
-                'media/IMG-20250914-WA0009.jpg',
-                'media/IMG-20250914-WA0012.jpg',
-                'media/IMG-20250914-WA0014.jpg',
-                'media/IMG-20250914-WA0019.jpg',
-                'media/IMG-20250914-WA0023.jpg',
-                'media/IMG-20250914-WA0062.jpg',
-                'media/IMG-20250914-WA0060.jpg',
-                'media/2025-09-1515.41.56_4467d14f.jpg',
-                'media/2025-09-1515.41.58_9a68ea3b.jpg',
-                'media/2025-09-1515.41.58_d49b185c.jpg'
+                './media/2025-09-1608.38.07_df910a03.jpg',
+                './media/2025-09-1608.38.08_5a5a9be5.jpg',
+                './media/IMG-20250914-WA0025.jpg',
+                './media/IMG-20250914-WA0066.jpg',
+                './media/IMG-20250914-WA0042.jpg',
+                './media/IMG-20250914-WA0049.jpg',
+                './media/IMG-20250914-WA0056.jpg',
+                './media/IMG-20250914-WA0058.jpg',
+                './media/IMG-20250914-WA0008.jpg',
+                './media/IMG-20250914-WA0009.jpg',
+                './media/IMG-20250914-WA0012.jpg',
+                './media/IMG-20250914-WA0014.jpg',
+                './media/IMG-20250914-WA0019.jpg',
+                './media/IMG-20250914-WA0023.jpg',
+                './media/IMG-20250914-WA0062.jpg',
+                './media/IMG-20250914-WA0060.jpg',
+                './media/2025-09-1515.41.56_4467d14f.jpg',
+                './media/2025-09-1515.41.58_9a68ea3b.jpg',
+                './media/2025-09-1515.41.58_d49b185c.jpg'
             ];
             
             // Create gallery items
