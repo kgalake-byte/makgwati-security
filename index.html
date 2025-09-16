@@ -244,9 +244,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            align-items: start;
         }
         
         .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             background: #fff;
             border-radius: 8px;
             overflow: hidden;
@@ -271,6 +275,9 @@
         }
         
         .service-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             padding: 20px;
         }
         
@@ -811,72 +818,118 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Training Programs</h2>
+<section id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Training Programs</h2>
+        </div>
+        <div class="services-grid">
+            <!-- Security Grades -->
+            <div class="service-card">
+                <div class="service-img" id="security-img">
+                    <div class="backup-img">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Security Training</span>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Security Grades Training</h3>
+                    <p>Comprehensive training for various security grades</p>
+                    <div class="price">EDC(Part-Time): R2400</div>
+                    <div class="price">Grade B: R1200</div>
+                    <div class="price">Grade A: R1300</div>
+                    <div class="price">CIT: R1400</div>
+                    <div class="price">Reaction: R1400</div>
+                </div>
             </div>
-            <div class="services-grid">
-                <!-- Security Grades -->
-                <div class="service-card">
-                    <div class="service-img" id="security-img">
-                        <div class="backup-img">
-                            <i class="fas fa-user-shield"></i>
-                            <span>Security Training</span>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Security Grades Training</h3>
-                        <p>Comprehensive training for various security grades</p>
-                        <div class="price">EDC: R2220</div>
-                        <div class="price">Grade B: R1100</div>
-                        <div class="price">Grade A: R1200</div>
-                        <div class="price">CIT: R1200</div>
-                        <div class="price">Reaction: R1200</div>
+            
+            <!-- Firearm Training -->
+            <div class="service-card">
+                <div class="service-img" id="firearm-img">
+                    <div class="backup-img">
+                        <i class="fas fa-gun"></i>
+                        <span>Firearm Training</span>
                     </div>
                 </div>
-                
-                <!-- Firearm Training -->
-                <div class="service-card">
-                    <div class="service-img" id="firearm-img">
-                        <div class="backup-img">
-                            <i class="fas fa-gun"></i>
-                            <span>Firearm Training</span>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Firearm Training</h3>
-                        <p>Professional firearm training for individuals and businesses</p>
-                        <div class="price">Handgun Private: R2000</div>
-                        <div class="price">Handgun Business: R2500</div>
-                        <div class="price">Shotgun Business: R2600</div>
-                        <div class="price">Rifle Business: R2600</div>
+                <div class="service-content">
+                    <h3>Firearm Training</h3>
+                    <p>Professional firearm training for individuals and businesses</p>
+                    <div class="price">Handgun Private: R2100</div>
+                    <div class="price">Handgun Business: R2600</div>
+                    <div class="price">Shotgun Business: R2600</div>
+                    <div class="price">Rifle Business: R2600</div>
+                </div>
+            </div>
+            
+            <!-- Specialized Training -->
+            <div class="service-card">
+                <div class="service-img" id="specialized-img">
+                    <div class="backup-img">
+                        <i class="fas fa-star"></i>
+                        <span>Specialized Training</span>
                     </div>
                 </div>
-                
-                <!-- Specialized Training -->
-                <div class="service-card">
-                    <div class="service-img" id="specialized-img">
-                        <div class="backup-img">
-                            <i class="fas fa-star"></i>
-                            <span>Specialized Training</span>
-                        </div>
+                <div class="service-content">
+                    <h3>Specialized Training</h3>
+                    <p>Advanced security training programs</p>
+                    <ul>
+                        <li>Facilitator Training</li>
+                        <li>Assessor Training</li>
+                        <li>Moderator Training</li>
+                        <li>Key Point Training</li>
+                        <li>CCTV Training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Security Guarding & Armed Response Card -->
+            <div class="service-card">
+                <div class="service-img" id="security-services-img">
+                    <div class="backup-img">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security Services</span>
                     </div>
-                    <div class="service-content">
-                        <h3>Specialized Training</h3>
-                        <p>Advanced security training programs</p>
-                        <ul>
-                            <li>Facilitator Training</li>
-                            <li>Assessor Training</li>
-                            <li>Moderator Training</li>
-                            <li>Key Point Training</li>
-                            <li>CCTV Training</li>
-                        </ul>
+                </div>
+                <div class="service-content">
+                    <h3>Security Guarding and Armed Response</h3>
+                    <p>Professional security services for businesses and residences</p>
+                    <ul>
+                        <li>Armed Response Unit</li>
+                        <li>Static Security Guarding</li>
+                        <li>Patrol Services</li>
+                        <li>Access Control</li>
+                        <li>Alarm Response</li>
+                        <li>Event Security</li>
+                    </ul>
+                    <div class="price">24/7 Professional Protection</div>
+                </div>
+            </div>
+
+            <!-- VIP Protection Card -->
+            <div class="service-card">
+                <div class="service-img" id="vip-protection-img">
+                    <div class="backup-img">
+                        <i class="fas fa-user-secret"></i>
+                        <span>VIP Protection</span>
                     </div>
+                </div>
+                <div class="service-content">
+                    <h3>VIP Protection Services</h3>
+                    <p>Executive protection and close personal protection services</p>
+                    <ul>
+                        <li>Executive Protection</li>
+                        <li>Close Protection Officers</li>
+                        <li>Corporate Executive Security</li>
+                        <li>Event Security for VIPs</li>
+                        <li>Residential Security</li>
+                        <li>Travel Security Detail</li>
+                    </ul>
+                    <div class="price">Premium Protection Services</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
@@ -1082,7 +1135,9 @@
             const serviceImages = [
                 { id: 'security-img', url: './media/IMG-20250914-WA0008.jpg', backup: true },
                 { id: 'firearm-img', url: './media/IMG-20250914-WA0011.jpg', backup: true },
-                { id: 'specialized-img', url: './media/IMG-20250914-WA0025.jpg', backup: true }
+                { id: 'specialized-img', url: './media/IMG-20250914-WA0025.jpg', backup: true },
+                { id: 'security-services-img', url: './media/2025-09-1608.38.07_df910a03.jpg', backup: true},
+                { id: 'vip-protection-img', url: './media/2025-09-1608.38.08_5a5a9be5.jpg', backup: true}
             ];
             
             serviceImages.forEach(service => {
