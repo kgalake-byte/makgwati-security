@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makgwati Firearm Training</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a4f8b;
+            --secondary-blue: #2a6aba;
+            --primary-gold: #d4af37;
+            --secondary-gold: #f1c40f;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: #000;
+            color: var(--light-text);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 70px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #1a4f8b, #0d2c54);
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-img::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 40%, #1a4f8b 90%);
+        }
+        
+        .logo-img img {
+            height: 70%;
+            width: auto;
+            object-fit: contain;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .logo-img .fa-shield-alt {
+            font-size: 2.2rem;
+            color: #d4af37;
+            z-index: 2;
+            position: relative;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text .tagline {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-style: italic;
+            margin-top: 3px;
+            letter-spacing: 0.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-gold);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1200x600/1a4f8b/ffffff?text=Makgwati+Security+Training') no-repeat center center/cover;
+            color: var(--light-text);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-text);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gold);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: #e0e0e0;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            color: var(--primary-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: #f1f1f1;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Modal for gallery images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--primary-gold);
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        
+        /* Video Gallery Section */
+        .video-gallery {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--light-text);
+            padding: 40px 0;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .main-video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-height: 400px;
+        }
+        
+        .video-playlist {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .video-thumb {
+            flex: 0 0 120px;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .video-thumb:hover {
+            transform: scale(1.05);
+        }
+        
+        .video-thumb.active {
+            box-shadow: 0 0 0 3px var(--primary-gold);
+        }
+        
+        .video-thumb img {
+            width: 100%;
+            height: 70px;
+            object-fit: cover;
+        }
+        
+        .video-thumb .video-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3px;
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .video-controls button {
+            background: var(--primary-gold);
+            color: var(--dark-text);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .video-controls button:hover {
+            background: var(--secondary-gold);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-info {
+            background: var(--primary-blue);
+            color: var(--light-text);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+        }
+        
+        .contact-detail {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-detail i {
+            margin-right: 10px;
+            color: var(--primary-gold);
+            min-width: 20px;
+        }
+        
+        .branch {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .map {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 450px;
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: var(--light-text);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-gold);
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-gold);
+            color: var(--dark-text);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Backup image styling */
+        .backup-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            font-weight: bold;
+            height: 100%;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+        
+        .backup-img i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-gold);
+        }
+        
+        /* Loading animation for images */
+        .image-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: row;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            nav ul.show {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: #000;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .logo {
+                flex-direction: row;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .main-video {
+                max-height: 300px;
+            }
+            
+            .video-thumb {
+                flex: 0 0 100px;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                flex-direction: row;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-img {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .logo-img .fa-shield-alt {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text .tagline {
+                font-size: 0.8rem;
+            }
+            
+            .main-video {
+                max-height: 250px;
+            }
+            
+            .video-thumb {
+                flex: 0 0 80px;
+            }
+            
+            .video-thumb img {
+                height: 50px;
+            }
+            
+            .video-controls button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 70px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo-container">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="media/makgwati-logo.jpg" alt="Makgwati Security Training Logo" onerror="this.style.display='none'; document.querySelector('.logo-img .fa-shield-alt').style.display='block';">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Makgwati Firearm Training</h1>
+                        <div class="tagline">Professional Security Training Solutions</div>
+                    </div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="mobile-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Professional Security Training Solutions</h2>
+            <p>Specializing in security grades training and firearm training with certified instructors and accredited programs</p>
+            <a href="#contact" class="btn">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Training Programs</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Security Grades -->
+                <div class="service-card">
+                    <div class="service-img" id="security-img">
+                        <div class="backup-img">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Security Training</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Security Grades Training</h3>
+                        <p>Comprehensive training for various security grades</p>
+                        <div class="price">EDC: R2220</div>
+                        <div class="price">Grade B: R1100</div>
+                        <div class="price">Grade A: R1200</div>
+                        <div class="price">CIT: R1200</div>
+                        <div class="price">Reaction: R1200</div>
+                    </div>
+                </div>
+                
+                <!-- Firearm Training -->
+                <div class="service-card">
+                    <div class="service-img" id="firearm-img">
+                        <div class="backup-img">
+                            <i class="fas fa-gun"></i>
+                            <span>Firearm Training</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Firearm Training</h3>
+                        <p>Professional firearm training for individuals and businesses</p>
+                        <div class="price">Handgun Private: R2000</div>
+                        <div class="price">Handgun Business: R2500</div>
+                        <div class="price">Shotgun Business: R2600</div>
+                        <div class="price">Rifle Business: R2600</div>
+                    </div>
+                </div>
+                
+                <!-- Specialized Training -->
+                <div class="service-card">
+                    <div class="service-img" id="specialized-img">
+                        <div class="backup-img">
+                            <i class="fas fa-star"></i>
+                            <span>Specialized Training</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Specialized Training</h3>
+                        <p>Advanced security training programs</p>
+                        <ul>
+                            <li>Facilitator Training</li>
+                            <li>Assessor Training</li>
+                            <li>Moderator Training</li>
+                            <li>Key Point Training</li>
+                            <li>CCTV Training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- Gallery items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Video Gallery Section -->
+    <section id="videos" class="video-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Training Videos</h2>
+            </div>
+            
+            <div class="video-container">
+                <video class="main-video" controls id="main-video" poster="https://placehold.co/800x450/1a4f8b/ffffff?text=Training+Video">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <div class="video-controls">
+                    <button id="prev-btn"><i class="fas fa-step-backward"></i> Previous</button>
+                    <button id="next-btn">Next <i class="fas fa-step-forward"></i></button>
+                </div>
+                
+                <div class="video-playlist">
+                    <div class="video-thumb active" data-video="media/VID-20250914-WA0005.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Firearm+Safety">
+                        <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Firearm+Safety" alt="Firearm Safety">
+                        <div class="video-title">Firearm Safety</div>
+                    </div>
+                    <div class="video-thumb" data-video="media/VID-20250914-WA0006.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Security+Procedures">
+                        <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Security+Procedures" alt="Security Procedures">
+                        <div class="video-title">Security Procedures</div>
+                    </div>
+                    <div class="video-thumb" data-video="media/VID-20250914-WA0050.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
+                        <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques" alt="Training Techniques">
+                        <div class="video-title">Training Techniques</div>
+                    </div>
+                    <div class="video-thumb" data-video="media/VID-20250914-WA0051.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
+                        <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques" alt="Training Techniques">
+                        <div class="video-title">Training Techniques</div>
+                    </div>
+                    <div class="video-thumb" data-video="media/VID-20250914-WA0052.mp4" data-poster="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques">
+                        <img src="https://placehold.co/120x70/1a4f8b/ffffff?text=Training+Techniques" alt="Training Techniques">
+                        <div class="video-title">Training Techniques</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Head Office</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Stand No. 20150 Vergelegen B Jane Furse</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <span>Landline: 0150012295</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Ally: 0790260098</span>
+                    </div>
+                    
+                    <div class="branch">
+                        <h3>Branches</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Makeketela: Charity - 0822847799</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Monsterlus: Kamo - 0820724878</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jane Furse: Beauty - 0822271165</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Driekop: Kgaugelo - 0769537244</span>
+                        </div>
+                    </div>
+                    
+                    <div class="branch">
+                        <h3>Accreditations</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-id-card"></i>
+                            <span>PSIRA: 4388623</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-id-card"></i>
+                            <span>T Number: 4333883</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-id-card"></i>
+                            <span>SAPS: 4001370</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-id-card"></i>
+                            <span>PFTC: T23110048</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14376.856951430022!2d29.68810076977538!3d-25.747933500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec06da2351b985d%3A0xce2aafe0328b9c1!2sJane%20Furse%2C%201085!5e0!3m2!1sen!2sza!4v1686750522389!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Makgwati Security Training provides professional security and firearm training with accredited programs and certified instructors.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61573604405845"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://vm.tiktok.com/ZSHnPS1coAFhM-fCIDX/"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/27822847799"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#contact"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+27790260098"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Makgwati Security Training. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.querySelector('.mobile-nav');
+            menu.classList.toggle('show');
+            
+            const icon = this.querySelector('i');
+            if (menu.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.mobile-nav').classList.remove('show');
+                document.querySelector('.mobile-menu-btn i').classList.remove('fa-times');
+                document.querySelector('.mobile-menu-btn i').classList.add('fa-bars');
+            });
+        });
+        
+        // Service card images with fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            // Service card images with fallback
+            const serviceImages = [
+                { id: 'security-img', url: 'media/IMG-20250914-WA0008.jpg', backup: true },
+                { id: 'firearm-img', url: 'media/IMG-20250914-WA0011.jpg', backup: true },
+                { id: 'specialized-img', url: 'media/IMG-20250914-WA0025.jpg', backup: true }
+            ];
+            
+            serviceImages.forEach(service => {
+                const imgElement = document.getElementById(service.id);
+                if (imgElement) {
+                    // Try to load the image
+                    const testImage = new Image();
+                    testImage.onload = function() {
+                        // Image loaded successfully
+                        imgElement.style.backgroundImage = `url('${service.url}')`;
+                        imgElement.querySelector('.backup-img').style.display = 'none';
+                    };
+                    testImage.onerror = function() {
+                        // Image failed to load, show backup
+                        imgElement.querySelector('.backup-img').style.display = 'flex';
+                        imgElement.style.backgroundImage = 'none';
+                    };
+                    testImage.src = service.url;
+                }
+            });
+            
+            // Check if logo loaded properly
+            const logoImg = document.querySelector('.logo-img img');
+            if (logoImg) {
+                logoImg.onerror = function() {
+                    this.style.display = 'none';
+                    document.querySelector('.logo-img .fa-shield-alt').style.display = 'block';
+                };
+            }
+            
+            // Initialize gallery with placeholder images
+            initGallery();
+            
+            // Video gallery functionality
+            initVideoGallery();
+            
+            // Image modal functionality
+            initImageModal();
+        });
+        
+        // Gallery initialization
+        function initGallery() {
+            const galleryGrid = document.querySelector('.gallery-grid');
+            const imageFiles = [
+                'media/2025-09-1608.38.07_df910a03.jpg',
+                'media/2025-09-1608.38.08_5a5a9be5.jpg'
+                'media/IMG-20250914-WA0025.jpg',
+                'media/IMG-20250914-WA0066.jpg',
+                'media/IMG-20250914-WA0042.jpg',
+                'media/IMG-20250914-WA0049.jpg',
+                'media/IMG-20250914-WA0056.jpg',
+                'media/IMG-20250914-WA0058.jpg',
+                'media/IMG-20250914-WA0008.jpg',
+                'media/IMG-20250914-WA0009.jpg',
+                'media/IMG-20250914-WA0012.jpg',
+                'media/IMG-20250914-WA0014.jpg',
+                'media/IMG-20250914-WA0019.jpg',
+                'media/IMG-20250914-WA0023.jpg',
+                'media/IMG-20250914-WA0062.jpg',
+                'media/IMG-20250914-WA0060.jpg',
+                'media/2025-09-1515.41.56_4467d14f.jpg',
+                'media/2025-09-1515.41.58_9a68ea3b.jpg',
+                'media/2025-09-1515.41.58_d49b185c.jpg'
+            ];
+            
+            // Create gallery items
+            imageFiles.forEach((src, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `
+                    <img src="${src}" alt="Training Image ${index + 1}" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                         loading="lazy">
+                    <div class="backup-img">
+                        <i class="fas fa-image"></i>
+                        <span>Training Image ${index + 1}</span>
+                    </div>
+                `;
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+        
+        // Video gallery functionality
+        function initVideoGallery() {
+            const mainVideo = document.getElementById('main-video');
+            const videoThumbs = document.querySelectorAll('.video-thumb');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            let currentVideoIndex = 0;
+            
+            // Initialize the first video
+            function initFirstVideo() {
+                if (videoThumbs.length > 0) {
+                    const firstVideoSrc = videoThumbs[0].getAttribute('data-video');
+                    const sourceElement = document.createElement('source');
+                    sourceElement.src = firstVideoSrc;
+                    sourceElement.type = 'video/mp4';
+                    mainVideo.appendChild(sourceElement);
+                    mainVideo.load();
+                }
+            }
+            
+            // Function to change video
+            function changeVideo(index) {
+                if (index >= 0 && index < videoThumbs.length) {
+                    currentVideoIndex = index;
+                    const videoSrc = videoThumbs[index].getAttribute('data-video');
+                    
+                    // Remove existing source
+                    while (mainVideo.firstChild) {
+                        mainVideo.removeChild(mainVideo.firstChild);
+                    }
+                    
+                    // Add new source
+                    const sourceElement = document.createElement('source');
+                    sourceElement.src = videoSrc;
+                    sourceElement.type = 'video/mp4';
+                    mainVideo.appendChild(sourceElement);
+                    mainVideo.load();
+                    
+                    // Update active class
+                    videoThumbs.forEach((thumb, i) => {
+                        if (i === index) {
+                            thumb.classList.add('active');
+                        } else {
+                            thumb.classList.remove('active');
+                        }
+                    });
+                }
+            }
+            
+            // Initialize first video
+            initFirstVideo();
+            
+            // Click on video thumb
+            videoThumbs.forEach((thumb, index) => {
+                thumb.addEventListener('click', () => {
+                    changeVideo(index);
+                });
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', () => {
+                let newIndex = currentVideoIndex - 1;
+                if (newIndex < 0) newIndex = videoThumbs.length - 1;
+                changeVideo(newIndex);
+            });
+            
+            // Next button
+            nextBtn.addEventListener('click', () => {
+                let newIndex = currentVideoIndex + 1;
+                if (newIndex >= videoThumbs.length) newIndex = 0;
+                changeVideo(newIndex);
+            });
+        }
+        
+        // Image Modal Functionality
+        function initImageModal() {
+            // Get the modal
+            const modal = document.getElementById("imageModal");
+            
+            // Get the image and insert it inside the modal
+            const modalImg = document.getElementById("modalImage");
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            // Add click event to all gallery items
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    if (img && img.style.display !== 'none') {
+                        modal.style.display = "block";
+                        modalImg.src = img.src;
+                        modalImg.alt = img.alt;
+                    } else {
+                        const backupImg = this.querySelector('.backup-img');
+                        if (backupImg) {
+                            modal.style.display = "block";
+                            modalImg.src = "";
+                            modalImg.alt = backupImg.textContent;
+                            modalImg.style.display = "none";
+                            // Create a placeholder for backup images
+                            const placeholder = document.createElement('div');
+                            placeholder.className = 'backup-img';
+                            placeholder.innerHTML = backupImg.innerHTML;
+                            placeholder.style.width = "100%";
+                            placeholder.style.height = "400px";
+                            placeholder.style.display = "flex";
+                            modalImg.parentNode.appendChild(placeholder);
+                        }
+                    }
+                });
+            });
+            
+            // Get the <span> element that closes the modal
+            const span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+                // Remove any backup placeholder that might have been added
+                const placeholder = modal.querySelector('.backup-img');
+                if (placeholder && placeholder.parentNode) {
+                    placeholder.parentNode.removeChild(placeholder);
+                }
+                modalImg.style.display = "block";
+            }
+            
+            // Also close when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                    const placeholder = modal.querySelector('.backup-img');
+                    if (placeholder && placeholder.parentNode) {
+                        placeholder.parentNode.removeChild(placeholder);
+                    }
+                    modalImg.style.display = "block";
+                }
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape" && modal.style.display === "block") {
+                    modal.style.display = "none";
+                    const placeholder = modal.querySelector('.backup-img');
+                    if (placeholder && placeholder.parentNode) {
+                        placeholder.parentNode.removeChild(placeholder);
+                    }
+                    modalImg.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
